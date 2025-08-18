@@ -1,5 +1,6 @@
 import { Colors } from "@/constants/Colors";
-import { StyleSheet, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import CustomText from "../../components/CustomText";
 import Header from "../../components/header";
 
@@ -9,11 +10,28 @@ export default function Index() {
     <View style={styles.container}>
       <Header />
       <View style={styles.fundo}>
+
         <View style={styles.paper}>
+          <View>
+          <Image
+          source={require('@/assets/images/perfil.jpg')}
+          style={{borderRadius: 50, width: 100, height: 100, marginBottom: 10,
+             elevation: 3,           // Sombra no Android
+    shadowColor: '#000',    // Sombra no iOS
+    shadowOffset: { width: 50, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+          }}/>
+          <TouchableOpacity style={styles.iconEdit}>
+            <MaterialIcons name="edit" size={15} color="gray" />
+          </TouchableOpacity>
+          </View>
+
+          <CustomText weight="bold" style={styles.midText}> Eduardo </CustomText>
         </View>
 
-        <View style={{flexDirection:"row", justifyContent: "space-between", alignItems: "center"}}>
-          <View style={{marginRight: 10}}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          <View style={{ marginRight: 10 }}>
             <CustomText weight="bold" style={styles.lazer}> Lazer e atividade Física</CustomText>
           </View>
 
@@ -35,9 +53,8 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: Colors.fundo,
+    alignItems: "center",
   },
   text: {
     fontSize: 20,
@@ -49,7 +66,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.branco,
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 20
+    paddingTop: 20,
+    borderRadius: 40,
+    marginTop: 20,
+
   },
   paper: {
     backgroundColor: '#fff', // Fundo branco
@@ -71,6 +91,20 @@ const styles = StyleSheet.create({
     color: '#DA291C', // vermelho SESI
     fontSize: 32,
   },
+  iconEdit: {
+    position: "absolute",
+    bottom: 90,
+    right: 0,
+    backgroundColor: Colors.branco,
+    borderRadius: 50,
+    padding: 5,
+    borderWidth: 2,
+    borderColor: "#fff",
+     shadowColor: '#000',    // Sombra no iOS
+    shadowOffset: { width: 0, height: 25 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
   numero: {
     backgroundColor: Colors.vermelho,
     width: 30,
@@ -83,8 +117,12 @@ const styles = StyleSheet.create({
     color: Colors.branco,
     fontSize: 10,
     textAlign: "center",
-
     paddingTop: 5
-  }
-
+  },
+  midText: {
+    fontSize: 12,
+    color: Colors.cinza,
+    textAlign: "center",
+    marginBottom: 5,
+  },
 });
