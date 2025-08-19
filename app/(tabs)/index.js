@@ -13,21 +13,28 @@ export default function Index() {
 
         <View style={styles.paper}>
           <View>
-          <Image
-          source={require('@/assets/images/perfil.jpg')}
-          style={{borderRadius: 50, width: 100, height: 100, marginBottom: 10,
-             elevation: 3,           // Sombra no Android
-    shadowColor: '#000',    // Sombra no iOS
-    shadowOffset: { width: 50, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 15,
-          }}/>
-          <TouchableOpacity style={styles.iconEdit}>
-            <MaterialIcons name="edit" size={15} color="gray" />
-          </TouchableOpacity>
+            <Image
+              source={require('@/assets/images/perfil.jpg')}
+              style={styles.imagePerfil}
+            />
+
+            <TouchableOpacity style={styles.iconEdit}>
+              <MaterialIcons name="edit" size={15} color="gray" />
+            </TouchableOpacity>
           </View>
 
           <CustomText weight="bold" style={styles.midText}> Eduardo </CustomText>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+            <View style={styles.information}>
+              <CustomText>Minhas informações</CustomText>
+            </View>
+            <View style={styles.information}>
+              <CustomText>Editar Perfil</CustomText>
+            </View>
+            <View style={styles.information}>
+              <CustomText>QR Code</CustomText>
+            </View>
+          </View>
         </View>
 
         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
@@ -72,15 +79,16 @@ const styles = StyleSheet.create({
 
   },
   paper: {
-    backgroundColor: '#fff', // Fundo branco
+    backgroundColor: Colors.branco, // Fundo branco
     borderRadius: 8,         // Bordas arredondadas
     padding: 16,            // Espaçamento interno
-    // Sombras (funciona diferente no iOS e Android)
-    elevation: 3,           // Sombra no Android
+    width: "85%",
+    alignItems: "center",
+    elevation: 15,           // Sombra no Android
     shadowColor: '#000',    // Sombra no iOS
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowRadius: 8,
   },
   lazer: {
     fontSize: 16,
@@ -93,17 +101,15 @@ const styles = StyleSheet.create({
   },
   iconEdit: {
     position: "absolute",
-    bottom: 90,
-    right: 0,
+    bottom: 113,
+    right: 5,
     backgroundColor: Colors.branco,
     borderRadius: 50,
     padding: 5,
-    borderWidth: 2,
-    borderColor: "#fff",
-     shadowColor: '#000',    // Sombra no iOS
-    shadowOffset: { width: 0, height: 25 },
+    elevation: 10,
+    shadowColor: '#000',
     shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowRadius: 10,
   },
   numero: {
     backgroundColor: Colors.vermelho,
@@ -119,10 +125,30 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingTop: 5
   },
+
   midText: {
     fontSize: 12,
     color: Colors.cinza,
     textAlign: "center",
     marginBottom: 5,
   },
+  imagePerfil: {
+    borderRadius: 70,
+    width: 130,
+    height: 130,
+    marginBottom: 10,
+    borderColor: "#fff",
+    borderWidth: 3,
+    elevation: 1,
+  }, information:{
+    backgroundColor: Colors.rosa,
+    width: 60
+    , height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    margin: 5,
+    marginBottom: 20,
+  }
 });
+

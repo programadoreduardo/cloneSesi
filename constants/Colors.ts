@@ -6,9 +6,36 @@
 
 export const Colors = {
  vermelho: "#DA291C",
- rosa:"#F7C1C9",
+ rosa:"#F2D9D9",
  azul:"#3FC4C4",
  cinza:"#656568ff",
- branco:"#FFFFFF",
- fundo:"#FBF7EF"
+ branco:"#fefefe",
+ fundo:"#FBF7EF",
+ preto:"#000000",
 };
+   
+/* 
+#ffffff → branco puro
+
+#fbf7ef → bege muito claro
+
+#1a110c → marrom bem escuro (quase preto)
+
+#fefefe → branco quase puro
+
+#f8f8f6 → cinza claríssimo
+
+#fcfcfb → branco gelo
+
+#885661 → marrom avermelhado
+
+#edd7d6 → rosa/bege claro
+
+#ca081e → vermelho (cor principal do logo SESI)
+
+#fffffc → branco levemente amarelado
+
+#fcffff → branco levemente azulado
+
+#150e0a → marrom escuro
+ */
